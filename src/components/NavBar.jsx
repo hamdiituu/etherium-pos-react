@@ -1,10 +1,13 @@
+import { Link, useLocation } from "react-router-dom";
+
 function Navbar(params) {
+  const { pathname } = useLocation();
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand fw-lighter" to={"/pos"}>
           EtherPOS
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -19,15 +22,29 @@ function Navbar(params) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Yönetim Paneli
-              </a>
+              <Link
+                className={`nav-link ${pathname === "/pos" && "active"}`}
+                aria-current="page"
+                to={"/pos"}
+              >
+                POS Ekranı
+              </Link>
             </li>
             <li className="nav-item">
+              <Link
+                className={`nav-link ${pathname === "/panel" && "active"}`}
+                aria-current="page"
+                to={"/panel"}
+              >
+                Yönetim Paneli
+              </Link>
+            </li>
+
+            {/* <li className="nav-item">
               <a className="nav-link" href="#">
                 ETP Sorgula
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

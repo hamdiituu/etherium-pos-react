@@ -5,3 +5,4 @@ export { default as PosProductListWrapper } from "./PosProductListWrapper";
 export { default as PosCart } from "./PosCart";
 export { default as PosProductItem } from "./PosProductItem";
 export { default as SideBar } from "./SideBar";
+export { default as PanelLayout } from "./PanelLayout";
